@@ -48,13 +48,14 @@ export const Ordenador = ({
           [style['ordenador__options--ativo']]: ordenadorAberto,
         })}
       >
-        {opcoes.map((opcao) => (
+        {opcoes.map((opcao, index) => (
           <div
             className={style['ordenador__option']}
             onClick={() => {
               setOrdenador(opcao.value);
               setNomeOrdenadorAtual(opcao.nome);
             }}
+            key={`ordenador__option--${index}`}
           >
             {opcao.nome}
           </div>

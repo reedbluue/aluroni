@@ -1,8 +1,8 @@
 import style from './Item.module.scss';
-import itens from '../itens.json';
+import cardapio from 'data/cardapio.json';
 import className from 'classnames';
 
-type ItemInterface = typeof itens[0]; 
+type ItemInterface = typeof cardapio[0]; 
 
 interface ItemPropsInterface extends ItemInterface {}
 

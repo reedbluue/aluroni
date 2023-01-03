@@ -1,5 +1,5 @@
 import style from './Itens.module.scss';
-import itens from './itens.json';
+import cardapio from 'data/cardapio.json';
 import { Item } from './Item/Item';
 import { useEffect, useState } from 'react';
 
@@ -9,14 +9,14 @@ interface ItensPropsInterface {
   ordenador: string;
 }
 
-type ItemInterface = typeof itens[0];
+type ItemCardapioInterface = typeof cardapio[0];
 
 export const Itens = ({ busca, filtro, ordenador }: ItensPropsInterface) => {
   
-  const [ lista, setLista ] = useState(itens);
+  const [ lista, setLista ] = useState(cardapio);
 
   useEffect(() => {
-    let listaFiltro = itens.filter(item => {
+    let listaFiltro = cardapio.filter(item => {
       const regex = new RegExp(busca, 'i');
       return regex.test(item.title);
     });
