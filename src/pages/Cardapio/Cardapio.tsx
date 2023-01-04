@@ -1,4 +1,5 @@
 import style from './Cardapio.module.scss';
+import styleTema from 'styles/Tema.module.scss';
 import { Buscador } from './Buscador/Buscador';
 import { useState } from 'react';
 import { Filtros } from './Filtros/Filtros';
@@ -13,19 +14,14 @@ export const Cardapio = (props: CardapioPropsInterface) => {
   const [ordenador, setOrdenador] = useState('');
 
   return (
-    <main className={style['main']}>
-      <header className={style['header']}>
-        <h1 className={style['header__text']}>A casa do código e da massa</h1>
-      </header>
-      <section className={style['cardapio']}>
-        <h3 className={style['cardapio__titulo']}>Cardápio</h3>
-        <Buscador busca={busca} setBusca={setBusca} />
-        <div className={style['cardapio__filtros']}>
-          <Filtros filtroAtivo={filtroAtivo} setFiltroAtivo={setFiltroAtivo} />
-          <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
-        </div>
-        <Itens busca={busca} filtro={filtroAtivo} ordenador={ordenador} />
-      </section>
-    </main>
+    <section className={style['cardapio']}>
+      <h3 className={styleTema['titulo']}>Cardápio</h3>
+      <Buscador busca={busca} setBusca={setBusca} />
+      <div className={style['cardapio__filtros']}>
+        <Filtros filtroAtivo={filtroAtivo} setFiltroAtivo={setFiltroAtivo} />
+        <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
+      </div>
+      <Itens busca={busca} filtro={filtroAtivo} ordenador={ordenador} />
+    </section>
   );
 };
